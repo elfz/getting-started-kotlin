@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue
 import javax.persistence.Id
 
 @Entity
-class NoteEntity (
+data class NoteEntity (
     @Id
     @GeneratedValue
     val id: Long = 0L,
