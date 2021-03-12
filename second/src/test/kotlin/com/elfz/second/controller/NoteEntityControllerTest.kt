@@ -1,7 +1,7 @@
 package com.elfz.second.controller
 
-import com.elfz.second.domain.Note
-import com.elfz.second.repository.NoteRepository
+import com.elfz.second.adapter.out.persistence.NoteEntity
+import com.elfz.second.adapter.out.persistence.NoteRepository
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -12,20 +12,20 @@ import org.springframework.test.web.reactive.server.WebTestClient
 import reactor.core.publisher.Mono
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class NoteControllerTest (
-        @Autowired private val noteRepository: NoteRepository,
-        @Autowired private val webClient: WebTestClient
+class NoteEntityControllerTest (
+    @Autowired private val noteRepository: NoteRepository,
+    @Autowired private val webClient: WebTestClient
         ){
 
     @Test
     @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
     fun `Save test`() {
-        val note = Note(title = "titulo", description = "descricao")
+        val note = NoteEntity(title = "titulo", description = "descricao")
 
         webClient.post()
                 .uri("/notes")
                 .accept(MediaType.APPLICATION_JSON)
-                .body(Mono.just(note), Note::class.java)
+                .body(Mono.just(note), NoteEntity::class.java)
                 .exchange()
                 .expectStatus().isOk
                 .expectBody()

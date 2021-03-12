@@ -1,6 +1,7 @@
 package com.elfz.second.repository
 
-import com.elfz.second.domain.Note
+import com.elfz.second.adapter.out.persistence.NoteRepository
+import com.elfz.second.adapter.out.persistence.NoteEntity
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -9,11 +10,11 @@ import javax.transaction.Transactional
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Transactional
-class NoteRepositoryTest(@Autowired private val noteRepository: NoteRepository) {
+class NoteEntityRepositoryTest(@Autowired private val noteRepository: NoteRepository) {
 
     @Test
     fun `Test Save`() {
-        val note = Note(title = "titulo", description = "descricao")
+        val note = NoteEntity(title = "titulo", description = "descricao")
         noteRepository.save(note)
         val noteSaved = noteRepository.findById(note.id).get()
         assertThat(note.id).isEqualTo(noteSaved.id)
@@ -24,9 +25,10 @@ class NoteRepositoryTest(@Autowired private val noteRepository: NoteRepository) 
     @Test
     fun `Test Find All`() {
         val notes = listOf(
-                Note(title = "titulo", description = "descricao"),
-                Note(title = "titulo", description = "descricao"),
-                Note(title = "titulo", description = "descricao"))
+                NoteEntity(title = "titulo", description = "descricao"),
+                NoteEntity(title = "titulo", description = "descricao"),
+                NoteEntity(title = "titulo", description = "descricao")
+        )
 
         noteRepository.saveAll(notes)
 
