@@ -11,16 +11,16 @@ import org.mockito.junit.jupiter.MockitoExtension
 import java.util.*
 
 @ExtendWith(MockitoExtension::class)
-internal class NotePersistenceAdapterTest() {
+internal class SaveNotePersistenceAdapterTest {
 
     @InjectMocks
-    lateinit var adapter: NotePersistenceAdapter
+    lateinit var adapterSave: SaveNotePersistenceAdapter
 
     @Mock
     lateinit var noteRepository: NoteRepository
 
     @Test
-    fun `NotePersistenceAdapterTest test success`() {
+    fun `test success`() {
 
         // Given
         val domain = NoteDomain(
@@ -37,7 +37,7 @@ internal class NotePersistenceAdapterTest() {
             .thenReturn(entity)
 
         // When
-        val result = adapter.saveNote(domain)
+        val result = adapterSave.saveNote(domain)
 
         // Then
         assertThat(result)

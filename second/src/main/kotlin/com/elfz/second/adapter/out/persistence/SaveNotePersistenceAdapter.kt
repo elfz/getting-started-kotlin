@@ -5,7 +5,7 @@ import com.elfz.second.application.port.out.SaveNotePersistencePort
 import org.springframework.stereotype.Component
 
 @Component
-class NotePersistenceAdapter(
+class SaveNotePersistenceAdapter(
     private val repository: NoteRepository
 ) : SaveNotePersistencePort {
 

@@ -16,10 +16,12 @@ data class NoteEntity (
 
 fun NoteEntity.toDomain()= NoteDomain(
     title = this.title,
-    description = this.description
+    description = this.description,
+    id = this.id
 )
 
 fun NoteDomain.toEntity()= NoteEntity(
     title = this.title,
-    description = this.description
+    description = this.description,
+    id = this.id
 )
