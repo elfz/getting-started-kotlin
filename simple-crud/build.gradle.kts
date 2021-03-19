@@ -25,6 +25,9 @@ dependencies {
     runtimeOnly("org.hsqldb:hsqldb")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.boot:spring-boot-starter-webflux")
+    implementation("com.amazonaws:aws-java-sdk-s3:1.11.976")
+    implementation("io.github.microutils:kotlin-logging:1.12.5")
+    implementation("commons-io:commons-io:2.8.0")
 }
 
 tasks.withType<KotlinCompile> {
