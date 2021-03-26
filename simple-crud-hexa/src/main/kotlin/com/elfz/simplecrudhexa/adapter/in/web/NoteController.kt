@@ -20,4 +20,10 @@ class NoteController(
             findNoteUseCase.findAll()
                     .map{ it.toNoteResponse() }
 
+    @GetMapping("/s3/download")
+    fun downloadCsv(
+            @RequestParam(required = true) bucketName: String,
+            @RequestParam(required = true) fileName: String) {
+
+    }
 }

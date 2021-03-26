@@ -6,7 +6,7 @@ import com.elfz.simplecrudhexa.application.port.out.FindNotePersistencePort
 import org.springframework.stereotype.Service
 
 @Service
-class FindNoteUseCaseService(
+class FindNoteService(
         private val findNotePersistencePort: FindNotePersistencePort
 ) : FindNoteUseCase {
 

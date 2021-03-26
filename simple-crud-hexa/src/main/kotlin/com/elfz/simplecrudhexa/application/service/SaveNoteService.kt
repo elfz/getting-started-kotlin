@@ -6,11 +6,14 @@ import com.elfz.simplecrudhexa.application.port.out.SaveNotePersistencePort
 import org.springframework.stereotype.Service
 
 @Service
-class SaveNoteUseCaseService(
+class SaveNoteService(
     private val saveNotePersistencePort: SaveNotePersistencePort
 ) : SaveNoteUseCase {
 
     override fun save(noteDomain: NoteDomain) =
         saveNotePersistencePort.saveNote(noteDomain)
 
+    override fun saveNotesFromFile(source: String, fileName: String): List<NoteDomain> {
+        TODO("Not yet implemented")
+    }
 }

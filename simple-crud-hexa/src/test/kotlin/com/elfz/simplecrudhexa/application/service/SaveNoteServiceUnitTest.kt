@@ -12,12 +12,12 @@ import org.mockito.junit.jupiter.MockitoExtension
 import java.util.*
 
 @ExtendWith(MockitoExtension::class)
-internal class SaveNoteUseCaseServiceUnitTest(
+internal class SaveNoteServiceUnitTest(
 
 ) {
 
     @InjectMocks
-    lateinit var useCase: SaveNoteUseCaseService
+    lateinit var useCase: SaveNoteService
 
     @Mock
     lateinit var saveNotePersistencePort: SaveNotePersistencePort
