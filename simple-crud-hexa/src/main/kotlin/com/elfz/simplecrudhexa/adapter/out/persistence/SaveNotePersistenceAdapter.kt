@@ -1,10 +1,11 @@
-package com.elfz.simplecrudhexa.adapter.out.persistence
+package com.elfz.simplecrudhexa.adapter.out.persistence.note
 
+import com.elfz.simplecrudhexa.adapter.out.persistence.NoteRepository
+import com.elfz.simplecrudhexa.adapter.out.persistence.toDomain
+import com.elfz.simplecrudhexa.adapter.out.persistence.toEntity
 import com.elfz.simplecrudhexa.application.domain.NoteDomain
 import com.elfz.simplecrudhexa.application.port.out.SaveNotePersistencePort
 import org.springframework.stereotype.Component
-import java.io.BufferedReader
-import java.io.InputStreamReader
 
 @Component
 class SaveNotePersistenceAdapter(

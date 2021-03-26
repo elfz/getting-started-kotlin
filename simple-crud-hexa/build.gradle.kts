@@ -23,9 +23,11 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("com.amazonaws:aws-java-sdk-s3:1.11.976")
+
     runtimeOnly("org.hsqldb:hsqldb")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.boot:spring-boot-starter-webflux")
+    testImplementation("com.google.guava:guava:30.1-jre")
 }
 
 tasks.withType<KotlinCompile> {
