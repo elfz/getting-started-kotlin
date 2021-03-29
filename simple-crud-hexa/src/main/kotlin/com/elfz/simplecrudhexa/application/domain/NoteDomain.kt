@@ -6,5 +6,5 @@ data class NoteDomain(
 
     val description: String,
 
-    val id: Long? = 0L
+    val id: Long = 0L
 )

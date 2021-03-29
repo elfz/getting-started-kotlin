@@ -1,5 +1,6 @@
 package com.elfz.simplecrudhexa.application.service
 
+import com.elfz.simplecrudhexa.application.domain.NoteDomain
 import com.elfz.simplecrudhexa.application.port.`in`.SaveNoteFromFileUseCase
 import com.elfz.simplecrudhexa.application.port.`in`.SaveNoteUseCase
 import com.elfz.simplecrudhexa.application.port.out.FindNoteFromFilePersistencePort
@@ -12,9 +13,8 @@ class SaveNoteFromFileService(
         private val saveNoteUseCase: SaveNoteUseCase
 ): SaveNoteFromFileUseCase {
 
-    override fun save(source: String, fileName: String) {
-        findNoteFromFilePersistencePort.findFrom(source, fileName).forEach{
-            saveNoteUseCase.save(it)
-        }
-    }
+    override fun save(source: String, fileName: String) =
+        findNoteFromFilePersistencePort.findFrom(source, fileName)
+            .map { saveNoteUseCase.save(it) }
+
 }
