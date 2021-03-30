@@ -6,5 +6,4 @@ interface SaveNoteUseCase {
 
     fun save(noteDomain: NoteDomain): NoteDomain
 
-    fun saveNotesFromFile(source: String, fileName: String): List<NoteDomain>
 }

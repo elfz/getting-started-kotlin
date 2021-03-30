@@ -13,7 +13,4 @@ class SaveNoteService(
     override fun save(noteDomain: NoteDomain) =
         saveNotePersistencePort.saveNote(noteDomain)
 
-    override fun saveNotesFromFile(source: String, fileName: String): List<NoteDomain> {
-        TODO("Not yet implemented")
-    }
 }
