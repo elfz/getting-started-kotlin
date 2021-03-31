@@ -22,7 +22,7 @@ class NoteController(
             findNoteUseCase.findAll()
                     .map{ it.toNoteResponse() }
 
-    @PostMapping("/s3/")
+    @PostMapping("/s3")
     fun save(
             @RequestParam(required = true) bucketName: String,
             @RequestParam(required = true) fileName: String) {

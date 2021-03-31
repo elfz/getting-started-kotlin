@@ -1,6 +1,5 @@
 package com.elfz.simplecrudhexa.adapter.out.persistence
 
-import com.elfz.simplecrudhexa.adapter.out.persistence.note.SaveNotePersistenceAdapter
 import com.elfz.simplecrudhexa.application.domain.NoteDomain
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test

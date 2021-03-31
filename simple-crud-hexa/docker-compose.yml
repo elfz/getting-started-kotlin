@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  localstack:
+    container_name: "localstack_s3"
+    image: localstack/localstack
+    network_mode: bridge
+    ports:
+      - "4566:4566"
+    environment:
+      - SERVICES=s3
+#      - DATA_DIR=/tmp/localstack/data
+      - DEFAULT_REGION=us-east-1
+#    volumes:
+#      - ./tmp/localstack:/tmp/localstack:rw
