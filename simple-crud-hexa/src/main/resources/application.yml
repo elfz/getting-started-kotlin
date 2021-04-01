@@ -6,3 +6,10 @@ spring:
   jpa:
     properties.hibernate.dialect: org.hibernate.dialect.HSQLDialect
     hibernate.ddl-auto: create
+
+aws:
+  s3:
+    accessKey: 0
+    secretKey: 0
+    region: us-east-1
+    endpoint: http://0.0.0.0:4566
