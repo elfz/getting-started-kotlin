@@ -2,8 +2,7 @@ package com.elfz.simplecrudhexa.application.port.`in`
 
 import com.elfz.simplecrudhexa.application.domain.NoteDomain
 
-interface SaveNoteUseCase {
+interface SaveNoteFromFileUseCase {
 
-    fun save(noteDomain: NoteDomain): NoteDomain
-
+    fun save(source: String, fileName: String): List<NoteDomain>
 }

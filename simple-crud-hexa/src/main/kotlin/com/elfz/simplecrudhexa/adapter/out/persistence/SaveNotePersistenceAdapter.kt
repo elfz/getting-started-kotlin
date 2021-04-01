@@ -13,5 +13,4 @@ class SaveNotePersistenceAdapter(
         noteDomain.toEntity()
             .let { repository.save(it) }
             .toDomain()
-
 }

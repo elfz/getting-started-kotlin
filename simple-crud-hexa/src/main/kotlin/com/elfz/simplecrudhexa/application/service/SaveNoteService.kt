@@ -6,7 +6,7 @@ import com.elfz.simplecrudhexa.application.port.out.SaveNotePersistencePort
 import org.springframework.stereotype.Service
 
 @Service
-class SaveNoteUseCaseService(
+class SaveNoteService(
     private val saveNotePersistencePort: SaveNotePersistencePort
 ) : SaveNoteUseCase {
 
